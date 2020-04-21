@@ -10,7 +10,7 @@
   $uid = INTval($uid);
 
   #Se construye la consulta como un string
-  $query = "SELECT izquierda.uid, SUM(derecha.precio) FROM (SELECT usuarios.uid, tickets.tid FROM usuarios, compra_ticket, tickets WHERE usuarios.uid = compra_ticket.uid AND compra_ticket.tid = tickets.tid) AS izquierda, (SELECT viajes.precio, tickets.tid FROM viajes, para, tickets WHERE viajes.vid = para.vid AND para.tid = tickets.tid) AS derecha WHERE izquierda.tid = derecha.tid AND izquierda.uid = $uid GROUP BY izquierda.uid; "
+  $query = "SELECT izquierda.uid, SUM(derecha.precio) FROM (SELECT usuarios.uid, tickets.tid FROM usuarios, compra_ticket, tickets WHERE usuarios.uid = compra_ticket.uid AND compra_ticket.tid = tickets.tid) AS izquierda, (SELECT viajes.precio, tickets.tid FROM viajes, para, tickets WHERE viajes.vid = para.vid AND para.tid = tickets.tid) AS derecha WHERE izquierda.tid = derecha.tid AND izquierda.uid = $uid GROUP BY izquierda.uid; " ;
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
