@@ -10,7 +10,7 @@
   $username = strval($username);
 
   #Se construye la consulta como un string
-  $query = "SELECT DISTINCT abajo.nombre FROM(SELECT paises.nombre, hoteles.hid FROM hoteles, esta_en, ciudades, pertenece_a, paises WHERE hoteles.hid = esta_en.hid AND esta_en.cid = ciudades.cid AND ciudades.cid = pertenece_a.cid AND paises.pid = pertenece_a.pid) AS abajo, (SELECT usuarios.username, en_hotel.hid FROM usuarios, hace, reservas, en_hotel, hoteles WHERE usuarios.uid = hace.uid AND reservas.rid = hace.rid AND checkin <= CURRENT_DATE AND reservas.rid = en_hotel.rid AND en_hotel.hid = hoteles.hid) AS arriba WHERE arriba.hid = abajo.hid AND LOWER(arriba.username) LIKE LOWER('BrianDuke'); " ;
+  $query = "SELECT DISTINCT abajo.nombre FROM(SELECT paises.nombre, hoteles.hid FROM hoteles, esta_en, ciudades, pertenece_a, paises WHERE hoteles.hid = esta_en.hid AND esta_en.cid = ciudades.cid AND ciudades.cid = pertenece_a.cid AND paises.pid = pertenece_a.pid) AS abajo, (SELECT usuarios.username, en_hotel.hid FROM usuarios, hace, reservas, en_hotel, hoteles WHERE usuarios.uid = hace.uid AND reservas.rid = hace.rid AND checkin <= CURRENT_DATE AND reservas.rid = en_hotel.rid AND en_hotel.hid = hoteles.hid) AS arriba WHERE arriba.hid = abajo.hid AND LOWER(arriba.username) LIKE LOWER('%$username%'); " ;
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
