@@ -20,7 +20,7 @@
   <h3 align="center"> Buscar ciudades por país</h3>
 
   <form align="center" action="consultas/consulta_dos.php" method="post">
-    Id:
+    Nombre del país:
     <input type="text" name="pais">
     <br/><br/>
     <input type="submit" value="Buscar">
