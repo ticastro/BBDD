@@ -100,3 +100,18 @@ git commit -m"sites"
 git config user.email "snarriagada@uc.cl"
 git config user.name "Sebastian Arriagada"
 git push
+git status
+git add .
+git commit -m "sites3"
+git push
+git add Sites
+git commit -m "Sites solo"
+git add "Sites"
+git commit -m "sites"
+ls
+cd sites
+cd Sites
+ls
+git add .
+git commit -m"s"
+git push
