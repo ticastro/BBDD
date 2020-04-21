@@ -25,7 +25,7 @@
   
       <?php
         foreach ($pokemones as $p) {
-          echo "<tr><td>$p[0]</td></tr>";
+          echo "<tr><td>$p[1]</td></tr>";
       }
       ?>
       

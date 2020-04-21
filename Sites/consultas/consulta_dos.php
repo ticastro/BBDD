@@ -7,7 +7,7 @@
 
   #Se obtiene el valor del input del usuario
   $pais = $_POST["pais"];
-  $pais = intval($pais);
+  $pais = strval($pais);
 
   #Se construye la consulta como un string
   $query = "SELECT ciudades.nombre FROM ciudades, pertenece_a, paises WHERE paises.pid = pertenece_a.pid AND pertenece_a.cid = ciudades.cid AND LOWER(paises.nombre) LIKE LOWER('%$pais%');" ;
