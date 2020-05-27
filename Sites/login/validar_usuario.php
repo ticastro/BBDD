@@ -16,6 +16,8 @@ $result = $db -> prepare($query);
 $result -> execute();
 $usernames = $result -> fetchAll();
 
+echo $usernames ;
+
 if ($usernames[0] != ""){
     if ($usernames[1] == $password){
         echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
