@@ -50,10 +50,11 @@ echo $usernames[0][0] ;
 echo $usernames[0][1] ;
 echo '---' ;
 echo $password ;
+echo '---' ;
 
 
 if ($usernames[0][0] != ""){
-    if ($usernames[0][1] == $password){
+    if (strval($usernames[0][1]) == strval($password)){
         echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
     } else {
         echo "<h4> password incorrecta </h4>";
