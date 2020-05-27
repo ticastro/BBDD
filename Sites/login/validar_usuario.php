@@ -48,6 +48,7 @@ echo $usernames ;
 echo $usernames[0] ;
 echo $usernames[0][0] ;
 echo $usernames[0][1] ;
+echo '---' ;
 echo $password ;
 
 
