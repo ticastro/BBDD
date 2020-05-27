@@ -11,7 +11,7 @@ require("../config/conexion.php");
 
 
 
-if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
+if($_POST["usuario"] != "" && $_POST["password"] != "")
 {
 $query = "SELECT username, password FROM Usuarios WHERE username LIKE '%$usuario%' ; " ;
 
