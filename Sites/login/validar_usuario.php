@@ -4,7 +4,7 @@
 
 require("../config/conexion.php");
 
- $usuario = strtolower(htmlentities($_POST["usuario"], ENT_QUOTES));
+ $usuario = $_POST["usuario"];
  $password = $_POST["password"];
 
 if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
@@ -24,7 +24,8 @@ if ($usernames[0] != ""){
     }
  }else{
   echo 'Usuario no existente en la base de datos';
-  
+}
+
 }else{
  echo 'Debe especificar un usuario y password';
 }
