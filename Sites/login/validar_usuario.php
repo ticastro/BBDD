@@ -22,8 +22,11 @@ $usernames = $result -> fetchAll();
 
 
 echo $usernames ;
-echo $usernames[0] ;
-echo $usernames[1] ;
+echo $usernames[0][0] ;
+echo $usernames[0][1] ;
+foreach( $usernames as $v ) {
+   echo "<p> Value is: $v[0] $v[1] </p>";
+}
 
 if ($usernames[0] != ""){
     if ($usernames[1] == $password){
