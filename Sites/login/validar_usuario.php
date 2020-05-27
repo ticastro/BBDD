@@ -36,7 +36,7 @@ $usernames = $result -> fetchAll();
       <?php
         foreach ($usernames as $p) {
           echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
-          $pw = $p[1]
+          $pw = $p[1] ;
       }
       ?>
       
