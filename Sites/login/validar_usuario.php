@@ -13,7 +13,7 @@ require("../config/conexion.php");
 
 if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
 {
-$query = "SELECT username, password FROM usuarios WHERE username = $usuario; " ;
+$query = "SELECT username, password FROM usuarios WHERE username = $usuario ; " ;
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result = $db -> prepare($query);
