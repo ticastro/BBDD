@@ -1,5 +1,19 @@
 <?php include('templates/header.html');   ?>
 
+<?php
+session_start();
+?>
+<?php
+echo 'Bienvenido, ';
+if (isset($_SESSION['k_username'])) {
+ echo '<b>'.$_SESSION['k_username'].'</b>.';
+ echo '<p><a href="login/logout.php">Logout</a></p>';
+}else{
+ echo '<p><a href="login/login.php">Login</a></p>';
+ 
+}
+?>
+
 <body>
   <h1 align="center"> Agencia de Viajes</h1>
   <p style="text-align:center;">Aquí podrás encontrar información sobre los clientes y viajes de nuestra empresa.</p>
