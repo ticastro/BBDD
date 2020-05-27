@@ -7,6 +7,9 @@ require("../config/conexion.php");
  $usuario = $_POST["usuario"];
  $password = $_POST["password"];
 
+ echo $usuario ;
+ echo $password ;
+
 if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
 {
 $query = "SELECT username, password FROM usuarios WHERE username = $usuario; " ;
