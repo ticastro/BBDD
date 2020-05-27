@@ -20,6 +20,28 @@ $result = $db -> prepare($query);
 $result -> execute();
 $usernames = $result -> fetchAll();
 
+?>
+
+
+
+
+  <table>
+    <tr>
+      <th>username</th>
+      <th>password</th>
+    </tr>
+  
+      <?php
+        foreach ($usernames as $p) {
+          echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
+      }
+      ?>
+      
+  </table>
+
+
+<?php
+
 echo $usernames ;
 echo $usernames[0] ;
 
