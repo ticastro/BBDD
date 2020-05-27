@@ -47,8 +47,8 @@ $usernames = $result -> fetchAll();
 echo $usernames ;
 echo $usernames[0] ;
 echo $usernames[0][0] ;
-
-
+echo $usernames[0][1] ;
+echo $password ;
 
 
 if ($usernames[0][0] != ""){
