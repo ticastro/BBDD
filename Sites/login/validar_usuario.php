@@ -20,9 +20,10 @@ $result = $db -> prepare($query);
 $result -> execute();
 $usernames = $result -> fetchAll();
 
-echo $result ;
+
 echo $usernames ;
 echo $usernames[0] ;
+echo $usernames[1] ;
 
 if ($usernames[0] != ""){
     if ($usernames[1] == $password){
