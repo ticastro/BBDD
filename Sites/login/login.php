@@ -1,4 +1,4 @@
-<?php include('templates/header.html');   ?>
+<?php include('../templates/header.html');   ?>
 
 <form action="validar_usuario.php" method="post">
 Usuario:<input type="text" name="usuario" size="20" maxlength="20" />

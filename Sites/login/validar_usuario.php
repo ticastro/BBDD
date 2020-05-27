@@ -1,18 +1,36 @@
-<?php include('templates/header.html');   ?>
+<?php include('../templates/header.html');   ?>
 
 <?php
 
 require("../config/conexion.php");
 
-if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
-{
- // Puedes utilizar la funcion para eliminar algun caracter en especifico
- //$usuario = strtolower(quitar($HTTP_POST_VARS["usuario"]));
- //$password = $HTTP_POST_VARS["password"];
- // o puedes convertir los a su entidad HTML aplicable con htmlentities
  $usuario = strtolower(htmlentities($_POST["usuario"], ENT_QUOTES));
  $password = $_POST["password"];
- $result = pg_query('SELECT username, password FROM usuarios WHERE username=\''.$usuario.'\'');
+
+if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
+{
+$query = "SELECT username, password FROM usuarios WHERE username = $usuario; " ;
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+$result = $db -> prepare($query);
+$result -> execute();
+$usernames = $result -> fetchAll();
+
+if ($usernames[0] != ""){
+    if ($usernames[1] == $password){
+        echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
+    } else {
+        echo "<h4> password incorrecta </h4>";
+    }
+ }else{
+  echo 'Usuario no existente en la base de datos';
+  
+}else{
+ echo 'Debe especificar un usuario y password';
+}
+
+/*
+
  if($row = pg_fetch_array($result)){
   if($row["password"] == $password){
    $_SESSION["k_username"] = $row['usuario'];
@@ -23,6 +41,7 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
    <SCRIPT LANGUAGE="javascript">
    location.href = "index.php";
    </SCRIPT>*/
+/*
   }else{
    echo 'Password incorrecto';
   }
@@ -34,4 +53,6 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
  echo 'Debe especificar un usuario y password';
 }
 pg_close();
+*/
+
 ?>
