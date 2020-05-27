@@ -9,6 +9,7 @@ require("../config/conexion.php");
 
  echo $usuario ;
  echo $password ;
+ echo "\n  " ;
 
 if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
 {
@@ -19,6 +20,8 @@ $result = $db -> prepare($query);
 $result -> execute();
 $usernames = $result -> fetchAll();
 
+echo $result ;
+echo $usernames ;
 echo $usernames[0] ;
 
 if ($usernames[0] != ""){
