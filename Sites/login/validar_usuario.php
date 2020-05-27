@@ -36,7 +36,7 @@ $usernames = $result -> fetchAll();
       <?php
         foreach ($usernames as $p) {
           echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
-          $pw = $p[1] ;
+
       }
       ?>
       
@@ -52,12 +52,11 @@ echo $usernames[0][1] ;
 echo '---' ;
 echo $password ;
 echo '---' ;
-echo $p[1] ;
-echo '---' ;
+
 
 
 if ($usernames[0][0] != ""){
-    if (strval($p[1]) == strval($password)){
+    if (strval($usernames[0][1]) == strval($password)){
         echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
     } else {
         echo "<h4> password incorrecta </h4>";
