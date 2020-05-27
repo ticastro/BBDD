@@ -46,12 +46,13 @@ $usernames = $result -> fetchAll();
 
 echo $usernames ;
 echo $usernames[0] ;
+echo $usernames[0][0] ;
 
 
 
 
-if ($usernames[0] != ""){
-    if ($usernames[1] == $password){
+if ($usernames[0][0] != ""){
+    if ($usernames[0][1] == $password){
         echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
     } else {
         echo "<h4> password incorrecta </h4>";
