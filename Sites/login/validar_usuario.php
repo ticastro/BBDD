@@ -6,6 +6,8 @@ require("../config/conexion.php");
 
  $usuario = $_POST["usuario"];
  $password = $_POST["password"];
+ $usuario = strval($usuario);
+ $password = strval($password);
 
 
 
@@ -16,7 +18,7 @@ $query = "SELECT username, password FROM usuarios WHERE username = $usuario; " ;
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result = $db -> prepare($query);
 $result -> execute();
-$usernames = $result -> fetch();
+$usernames = $result -> fetchAll();
 
 echo $usernames ;
 echo $usernames[0] ;
