@@ -7,9 +7,7 @@ require("../config/conexion.php");
  $usuario = $_POST["usuario"];
  $password = $_POST["password"];
 
- echo $usuario ;
- echo $password ;
- echo "\n  " ;
+
 
 if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
 {
@@ -18,15 +16,14 @@ $query = "SELECT username, password FROM usuarios WHERE username = $usuario; " ;
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result = $db -> prepare($query);
 $result -> execute();
-$usernames = $result -> fetchAll();
+$usernames = $result -> fetch();
 
 
-echo $usernames ;
-echo $usernames[0][0] ;
-echo $usernames[0][1] ;
+
 foreach( $usernames as $v ) {
    echo "<p> Value is: $v[0] $v[1] </p>";
 }
+
 
 if ($usernames[0] != ""){
     if ($usernames[1] == $password){
