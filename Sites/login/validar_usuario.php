@@ -18,11 +18,10 @@ $result = $db -> prepare($query);
 $result -> execute();
 $usernames = $result -> fetch();
 
+echo $usernames ;
+echo $usernames[0] ;
 
 
-foreach( $usernames as $v ) {
-   echo "<p> Value is: $v[0] $v[1] </p>";
-}
 
 
 if ($usernames[0] != ""){
