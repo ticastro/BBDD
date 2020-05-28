@@ -18,6 +18,7 @@ if ($_SESSION['k_username'] != "") {
   echo $_SESSION['k_username'] ;
 
  echo '<p><a href="login/login.php">Login</a></p>';
+  echo '<p><a href="login/sign_up.php">Registrarme</a></p>';
  
 }
 ?>
