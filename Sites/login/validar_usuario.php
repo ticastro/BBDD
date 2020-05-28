@@ -58,6 +58,8 @@ echo '---' ;
 if ($usernames[0][0] != ""){
     if (strval($usernames[0][1]) == strval($password)){
         echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
+        $_SESSION["k_username"] = $usernames[0][0] ;
+        print_r($_SESSION);
         echo isset($_SESSION['k_username']) ;
         echo $_SESSION['k_username'] ;
         echo '<a href="../index.php">Index</a></p>';
