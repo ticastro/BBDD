@@ -30,7 +30,7 @@ if ($usernames[0][0] == ""){
   $result = $db -> prepare($query1);
   $result -> execute();
   $uid = $result -> fetchAll();
-  $nuevo_uid = intval($uid[0][0]) + 1; 
+  $nuevo_uid = 52 
   $nuevo_username = $_POST["username"];
   $nuevo_password = $_POST["password"];
   echo "$nuevo_uid";
@@ -39,6 +39,7 @@ if ($usernames[0][0] == ""){
   $query2 = "INSERT INTO borrador(uid, nombre, password) VALUES ('$nuevo_uid', '$nuevo_username', '$nuevo_password');" ;
   $result = $db -> prepare($query2);
   $result -> execute();
+
 
   //$query3 = "INSERT INTO Datos_usuarios(duid, nombre, direccionusuario) VALUES ($nuevo_uid, $_POST["nombre"], $_POST["direccion"]); ";
   //$query1 = "INSERT INTO Usuarios(uid, username,password) VALUES (valoruid, valorusername, valorpassword); "
