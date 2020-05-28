@@ -8,9 +8,12 @@ session_start();
 <?php
 echo 'Bienvenido, ';
 if (isset($_SESSION['k_username'])) {
+  echo 'Entro al primer if';
  echo '<b>'.$_SESSION['k_username'].'</b>.';
  echo '<p><a href="login/logout.php">Logout</a></p>';
 }else{
+  echo 'entro al else';
+
  echo '<p><a href="login/login.php">Login</a></p>';
  
 }
