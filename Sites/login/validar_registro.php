@@ -30,7 +30,7 @@ if ($usernames[0][0] == ""){
   $result = $db -> prepare($query1);
   $result -> execute();
   $uid = $result -> fetchAll();
-  $nuevo_uid = 52 
+  $nuevo_uid = 52 ;
   $nuevo_username = $_POST["username"];
   $nuevo_password = $_POST["password"];
   echo "$nuevo_uid";
