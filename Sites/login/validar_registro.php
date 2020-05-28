@@ -30,7 +30,7 @@ if ($usernames[0][0] == ""){
   $result = $db -> prepare($query1);
   $result -> execute();
   $uid = $result -> fetchAll();
-  $nuevo_uid = uid[0][0] + 1;
+  $nuevo_uid = intval($uid[0][0]) + 1; 
   echo "$nuevo_uid";
   //$query1 = "INSERT INTO Usuarios(uid, username,password) VALUES (valoruid, valorusername, valorpassword); "
   echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
