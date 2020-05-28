@@ -26,41 +26,13 @@ $result -> execute();
 $usernames = $result -> fetchAll();
 
 ?>
-
-
-
-
-  <table>
-    <tr>
-      <th>username</th>
-      <th>password</th>
-    </tr>
-  
-      <?php
-        foreach ($usernames as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
-
-      }
-      ?>
-      
-  </table>
-
-
 <?php
-
-echo $usernames ;
-echo $usernames[0] ;
-echo $usernames[0][0] ;
-echo $usernames[0][1] ;
-echo '---' ;
-echo $password ;
-echo '---' ;
 
 
 
 if ($usernames[0][0] != ""){
     if (strval($usernames[0][1]) == strval($password)){
-        echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
+        echo 'Has ingresado correctamente '.$_SESSION['k_username'].' <p>';
         $_SESSION["k_username"] = $usernames[0][0] ;
         print_r($_SESSION);
         echo isset($_SESSION['k_username']) ;
@@ -78,31 +50,5 @@ if ($usernames[0][0] != ""){
 }else{
  echo 'Debe especificar un usuario y password';
 }
-
-/*
-
- if($row = pg_fetch_array($result)){
-  if($row["password"] == $password){
-   $_SESSION["k_username"] = $row['usuario'];
-   echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
-   echo '<a href="index.php">Index</a></p>';
-   //Elimina el siguiente comentario si quieres que re-dirigir automáticamente a index.php
-   /*Ingreso exitoso, ahora sera dirigido a la pagina principal.
-   <SCRIPT LANGUAGE="javascript">
-   location.href = "index.php";
-   </SCRIPT>*/
-/*
-  }else{
-   echo 'Password incorrecto';
-  }
- }else{
-  echo 'Usuario no existente en la base de datos';
- }
- pg_free_result($result);
-}else{
- echo 'Debe especificar un usuario y password';
-}
-pg_close();
-*/
 
 ?>
