@@ -1,8 +1,10 @@
-<?php include('templates/header.html');   ?>
-
 <?php
 session_start();
 ?>
+
+<?php include('templates/header.html');   ?>
+
+
 <?php
 echo 'Bienvenido, ';
 if (isset($_SESSION['k_username'])) {
