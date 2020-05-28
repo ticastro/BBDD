@@ -1,9 +1,8 @@
-
-<?php 
-session_start();
-include('../templates/header.html');   ?>
+<?php session_start(); ?>
 
 
+
+<?php include('../templates/header.html');   ?>
 
 <body>
 <?php
