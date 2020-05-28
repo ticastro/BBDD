@@ -19,15 +19,10 @@ if($_POST["username"] != "" && $_POST["password"] != "" && $_POST["nombre"] != "
 $query = "SELECT username FROM Usuarios WHERE username = '$usuario' ; " ;
 
 #$query = "SELECT username, password FROM Usuarios, tiene_mail , mail_usuarios WHERE tiene_mail.muid = mail_usuarios.muid AND usuarios.uid = tiene_mail.uid ;";
-
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 $result = $db -> prepare($query);
 $result -> execute();
 $usernames = $result -> fetchAll();
 
-?>
-
-<?php
 
 if ($usernames[0][0] != ""){
   echo 'te vamos a registrar con'.$_POST["username"];
@@ -37,7 +32,6 @@ if ($usernames[0][0] != ""){
   $uid = $result -> fetchAll();
   $nuevo_uid = uid[0][0] + 1;
   echo "$nuevo_uid";
-
   //$query1 = "INSERT INTO Usuarios(uid, username,password) VALUES (valoruid, valorusername, valorpassword); "
   echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
   $_SESSION["k_username"] = $usernames[0][0] ;
@@ -45,12 +39,14 @@ if ($usernames[0][0] != ""){
   echo isset($_SESSION['k_username']) ;
   echo $_SESSION['k_username'] ;
   echo '<a href="../index.php">Index</a></p>';
-        
-
+}
 }else{
  echo 'Debe especificar todos los datos pedidos';
 }
 
+?>
+
+<?php
 /*
 
  if($row = pg_fetch_array($result)){
