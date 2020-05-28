@@ -30,7 +30,7 @@ if ($usernames[0][0] == ""){
   $result = $db -> prepare($query1);
   $result -> execute();
   $uid = $result -> fetchAll();
-  $nuevo_uid = 52 ;
+  $nuevo_uid = intval($uid[0][0]) + 1 ;
   $nuevo_username = $_POST["username"];
   $nuevo_password = $_POST["password"];
   echo "$nuevo_uid";
@@ -43,8 +43,9 @@ if ($usernames[0][0] == ""){
 
   //$query3 = "INSERT INTO Datos_usuarios(duid, nombre, direccionusuario) VALUES ($nuevo_uid, $_POST["nombre"], $_POST["direccion"]); ";
   //$query1 = "INSERT INTO Usuarios(uid, username,password) VALUES (valoruid, valorusername, valorpassword); "
+  $_SESSION["k_username"] = $nuevo_username ;
+  $_SESSION["uid"] = $nuevo_uid;
   echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
-  $_SESSION["k_username"] = $usernames[0][0] ;
   print_r($_SESSION);
   echo isset($_SESSION['k_username']) ;
   echo $_SESSION['k_username'] ;
