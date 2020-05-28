@@ -1,6 +1,9 @@
-<?php include('../templates/header.html');   ?>
+<?php 
+session_start();
+include('../templates/header.html');   ?>
 
 <?php
+
 
 require("../config/conexion.php");
 

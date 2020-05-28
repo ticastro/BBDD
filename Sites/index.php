@@ -1,8 +1,6 @@
 <?php
-if ($_SESSION['k_username'] != "") {
-echo 'ya tienes usuario';
-}else{
-  session_start();}
+session_start();
+print_r($_SESSION);
 
 ?>
 
