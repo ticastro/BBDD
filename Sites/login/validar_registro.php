@@ -39,6 +39,8 @@ if ($usernames[0][0] == ""){
   $query2 = "INSERT INTO borrador(uid,username,password) VALUES ('$nuevo_uid', '$nuevo_username', '$nuevo_password');" ;
   $result = $db -> prepare($query2);
   $result -> execute();
+  $user = $result -> fetchAll();
+  echo "$user";
   //$query3 = "INSERT INTO Datos_usuarios(duid, nombre, direccionusuario) VALUES ($nuevo_uid, $_POST["nombre"], $_POST["direccion"]); ";
   //$query1 = "INSERT INTO Usuarios(uid, username,password) VALUES (valoruid, valorusername, valorpassword); "
   echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
