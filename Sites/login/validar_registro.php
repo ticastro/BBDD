@@ -36,7 +36,7 @@ if ($usernames[0][0] == ""){
   echo "$nuevo_uid";
   echo "$nuevo_username";
   echo "$nuevo_password";
-  $query2 = "INSERT INTO borrador(uid,username,password) VALUES ('$nuevo_uid', '$nuevo_username', '$nuevo_password');" ;
+  $query2 = "INSERT INTO borrador(uid, nombre, password) VALUES ('$nuevo_uid', '$nuevo_username', '$nuevo_password');" ;
   $result = $db -> prepare($query2);
   echo "entro1";
   $result -> execute();
