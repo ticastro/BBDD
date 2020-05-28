@@ -17,6 +17,7 @@ if ($_SESSION['k_username'] != "") {
  echo '<p><a href="login/logout.php">Logout</a></p>';
 }else{
   echo 'entro al else';
+  echo $_SESSION['k_username'] ;
 
  echo '<p><a href="login/login.php">Login</a></p>';
  
