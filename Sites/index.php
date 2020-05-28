@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['k_username'])) {
+if ($_SESSION['k_username'] != "") {
 echo 'ya tienes usuario';
 }else{
   session_start();}
@@ -11,7 +11,7 @@ echo 'ya tienes usuario';
 
 <?php
 echo 'Bienvenido, ';
-if (isset($_SESSION['k_username'])) {
+if ($_SESSION['k_username'] != "") {
   echo 'Entro al primer if';
  echo '<b>'.$_SESSION['k_username'].'</b>.';
  echo '<p><a href="login/logout.php">Logout</a></p>';
