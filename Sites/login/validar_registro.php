@@ -25,7 +25,6 @@ $usernames = $result -> fetchAll();
 
 
 if ($usernames[0][0] == ""){
-  echo 'te vamos a registrar con'.$_POST["username"];
   $query1 = "SELECT MAX(uid) FROM Usuarios ;";
   $result = $db -> prepare($query1);
   $result -> execute();
@@ -33,8 +32,23 @@ if ($usernames[0][0] == ""){
   $nuevo_uid = intval($uid[0][0]) + 1 ;
   $nuevo_username = $_POST["username"];
   $nuevo_password = $_POST["password"];
-  $query2 = "INSERT INTO borrador(uid, nombre, password) VALUES ('$nuevo_uid', '$nuevo_username', '$nuevo_password');" ;
+  $nuevo_nombre = $_POST["nombre"];
+  $nuevo_mail = $_POST["correo"];
+  $nuevo_direccion = $_POST["direccion"];
+  $query2 = "INSERT INTO usuarios(uid, username, password) VALUES ('$nuevo_uid', '$nuevo_username', '$nuevo_password');" ;
   $result = $db -> prepare($query2);
+  $result -> execute();
+  $query3 = "INSERT INTO Datos_usuarios(duid, nombre, direccionusuario) VALUES ('$nuevo_uid', '$nuevo_nombre', '$nuevo_direccion');" ;
+  $result = $db -> prepare($query3);
+  $result -> execute();
+  $query4 = "INSERT INTO mail_usuarios(muid, mail) VALUES ('$nuevo_uid', '$nuevo_mail');" ;
+  $result = $db -> prepare($query4);
+  $result -> execute();
+  $query5 = "INSERT INTO tiene_datos(duid, uid) VALUES ('$nuevo_uid', '$nuevo_uid');" ;
+  $result = $db -> prepare($query5);
+  $result -> execute();
+  $query6 = "INSERT INTO tiene_mail(muid, uid) VALUES ('$nuevo_uid', '$nuevo_uid');" ;
+  $result = $db -> prepare($query6);
   $result -> execute();
 
 
@@ -42,45 +56,20 @@ if ($usernames[0][0] == ""){
   //$query1 = "INSERT INTO Usuarios(uid, username,password) VALUES (valoruid, valorusername, valorpassword); "
   $_SESSION["k_username"] = $nuevo_username ;
   $_SESSION["uid"] = $nuevo_uid;
-  echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
-  print_r($_SESSION);
-  echo isset($_SESSION['k_username']) ;
-  echo $_SESSION['k_username'] ;
+  echo 'Has sido registrado correctamente '.$_SESSION['k_username'].' <p>';
   echo '<a href="../index.php">Index</a></p>';
-}
 }else{
- echo 'Debe especificar todos los datos pedidos';
+  echo 'El username ya existe, intente nuevamente.'
+  echo '<a href="../login/validar_registro.php">Volver</a></p>';
+}
+
+}else{
+ echo 'Debe especificar todos los datos pedidos' ;
+ echo '\n';
    echo '<a href="../index.php">Index</a></p>';
 
 }
 
 ?>
 
-<?php
-/*
 
- if($row = pg_fetch_array($result)){
-  if($row["password"] == $password){
-   $_SESSION["k_username"] = $row['usuario'];
-   echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
-   echo '<a href="index.php">Index</a></p>';
-   //Elimina el siguiente comentario si quieres que re-dirigir automáticamente a index.php
-   /*Ingreso exitoso, ahora sera dirigido a la pagina principal.
-   <SCRIPT LANGUAGE="javascript">
-   location.href = "index.php";
-   </SCRIPT>*/
-/*
-  }else{
-   echo 'Password incorrecto';
-  }
- }else{
-  echo 'Usuario no existente en la base de datos';
- }
- pg_free_result($result);
-}else{
- echo 'Debe especificar un usuario y password';
-}
-pg_close();
-*/
-
-?>
