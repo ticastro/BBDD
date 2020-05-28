@@ -31,10 +31,10 @@ if ($usernames[0][0] == ""){
   $result -> execute();
   $uid = $result -> fetchAll();
   $nuevo_uid = intval($uid[0][0]) + 1; 
-  $nuevo_username = $_POST¨["username"];
+  $nuevo_username = $_POST["username"];
   $nuevo_password = $_POST["password"];
-  echo "$nuevo_uid\n";
-  echo "$nuevo_username\n";
+  echo "$nuevo_uid";
+  echo "$nuevo_username";
   echo "$nuevo_password";
   $query2 = "INSERT INTO borrador(uid,username,password) VALUES ('$nuevo_uid', '$nuevo_username', '$nuevo_password');" ;
   $result = $db -> prepare($query2);
