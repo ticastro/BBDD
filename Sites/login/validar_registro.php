@@ -32,7 +32,7 @@ if ($usernames[0][0] == ""){
   $uid = $result -> fetchAll();
   $nuevo_uid = intval($uid[0][0]) + 1; 
   echo "$nuevo_uid";
-  $query2 = "INSERT INTO borrador(uid,username,password) VALUES ($nuevo_uid, $_POST["username"], $_POST["password"]);" ;
+  $query2 = "INSERT INTO borrador(uid,username,password) VALUES ('$nuevo_uid', '$_POST["username"]', '$_POST["password"]');" ;
   $result = $db -> prepare($query2)
   $result -> execute()
   //$query3 = "INSERT INTO Datos_usuarios(duid, nombre, direccionusuario) VALUES ($nuevo_uid, $_POST["nombre"], $_POST["direccion"]); ";
