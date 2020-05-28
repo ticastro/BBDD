@@ -1,6 +1,5 @@
 <?php
 session_start();
-print_r($_SESSION);
 
 ?>
 
@@ -10,17 +9,13 @@ print_r($_SESSION);
 <?php
 echo 'Bienvenido, ';
 if ($_SESSION['k_username'] != "") {
-  echo 'Entro al primer if';
  echo '<b>'.$_SESSION['k_username'].'</b>.';
  echo '<p><a href="login/logout.php">Logout</a></p>';
  echo '<p><a href="login/bajar_usuario.php">Eliminar cuenta</a></p>';
 
 }else{
-  echo 'entro al else';
-  echo $_SESSION['k_username'] ;
-
  echo '<p><a href="login/login.php">Login</a></p>';
-  echo '<p><a href="login/sign_up.php">Registrarme</a></p>';
+echo '<p><a href="login/sign_up.php">Registrarme</a></p>';
  
 }
 ?>
