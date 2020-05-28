@@ -58,7 +58,7 @@ echo '---' ;
 if ($usernames[0][0] != ""){
     if (strval($usernames[0][1]) == strval($password)){
         echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
-        header('Location: ../index.php')
+        header('Location: ../index.php');
 
     } else {
         echo "<h4> password incorrecta </h4>";
