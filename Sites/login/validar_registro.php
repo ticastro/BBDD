@@ -24,7 +24,7 @@ $result -> execute();
 $usernames = $result -> fetchAll();
 
 
-if ($usernames[0][0] != ""){
+if ($usernames[0][0] == ""){
   echo 'te vamos a registrar con'.$_POST["username"];
   $query1 = "SELECT MAX(uid) FROM Usuarios ;";
   $result = $db -> prepare($query1);
