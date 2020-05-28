@@ -1,5 +1,9 @@
 <?php
-session_start();
+if (isset($_SESSION['k_username'])) {
+echo 'ya tienes usuario';
+}else{
+  session_start();}
+
 ?>
 
 <?php include('templates/header.html');   ?>
