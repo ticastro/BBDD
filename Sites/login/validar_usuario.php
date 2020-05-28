@@ -16,7 +16,7 @@ require("../config/conexion.php");
 
 if($_POST["usuario"] != "" && $_POST["password"] != "")
 {
-$query = "SELECT username, password FROM Usuarios WHERE username LIKE '%$usuario%' ; " ;
+$query = "SELECT username, password, uid FROM Usuarios WHERE username LIKE '%$usuario%' ; " ;
 
 #$query = "SELECT username, password FROM Usuarios, tiene_mail , mail_usuarios WHERE tiene_mail.muid = mail_usuarios.muid AND usuarios.uid = tiene_mail.uid ;";
 
@@ -34,6 +34,8 @@ if ($usernames[0][0] != ""){
     if (strval($usernames[0][1]) == strval($password)){
         echo 'Has ingresado correctamente '.$_SESSION['k_username'].' <p>';
         $_SESSION["k_username"] = $usernames[0][0] ;
+        $_SESSION["uid"] = $usernames[0][2];
+
         print_r($_SESSION);
         echo isset($_SESSION['k_username']) ;
         echo $_SESSION['k_username'] ;
