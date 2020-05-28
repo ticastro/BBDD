@@ -23,6 +23,7 @@ $result = $db -> prepare($query);
 $result -> execute();
 $usernames = $result -> fetchAll();
 
+echo '$usernames[0][0]';
 
 if ($usernames[0][0] == ""){
   $query1 = "SELECT MAX(uid) FROM Usuarios ;";
@@ -59,7 +60,7 @@ if ($usernames[0][0] == ""){
   echo 'Has sido registrado correctamente '.$_SESSION['k_username'].' <p>';
   echo '<a href="../index.php">Index</a></p>';
 }else{
-  echo 'El username ya existe, intente nuevamente.'
+  echo 'El username ya existe, intente nuevamente.';
   echo '<a href="../login/validar_registro.php">Volver</a></p>';
 }
 
