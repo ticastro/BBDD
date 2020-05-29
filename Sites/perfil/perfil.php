@@ -50,6 +50,13 @@ echo 'Bienvenido a tu perfil.' ;
     <tr>
       <th>Tus reservas</th>
     </tr>
+
+    <tr>
+      <th>hotel</th>
+      <th>check in</th>
+      <th>check out</th>
+      <th>direccion</th>
+    </tr>
   
       <?php
         foreach ($reservas as $p) {
@@ -66,6 +73,15 @@ echo 'Bienvenido a tu perfil.' ;
     <tr>
       <th>Tus datos de viaje</th>
     </tr>
+
+    <tr>
+      <th>nº asiento</th>
+      <th>fecha viaje</th>
+      <th>hora salida</th>
+      <th>origen</th>
+      <th>destino</th>
+    </tr>
+  
   
       <?php
         foreach ($datos as $p) {
