@@ -12,8 +12,7 @@ echo 'Bienvenido a tu perfil.' ;
   require("../config/conexion.php");
 
   $uid = $_SESSION['uid'];
-  echo '$uid';
-  echo $_SESSION['uid'];
+
 
   #Se construye la consulta como un string
   $query = "SELECT DISTINCT foo.nombre, fee.checkin, fee.chekout, foo.direccionhotel FROM (SELECT reservas.rid, reservas.checkin, reservas.chekout FROM usuarios, hace, reservas WHERE usuarios.uid = '$uid' AND usuarios.uid = hace.uid AND hace.rid = reservas.rid) as fee, (SELECT reservas.rid, hoteles.direccionhotel, hoteles.nombre FROM hoteles, en_hotel, reservas WHERE hoteles.hid = en_hotel.hid AND en_hotel.rid = reservas.rid) as foo WHERE fee.rid = foo.rid  ;" ;

@@ -36,9 +36,7 @@ if ($usernames[0][0] != ""){
         $_SESSION["k_username"] = $usernames[0][0] ;
         $_SESSION["uid"] = $usernames[0][2];
 
-        print_r($_SESSION);
-        echo isset($_SESSION['k_username']) ;
-        echo $_SESSION['k_username'] ;
+    
         echo '<a href="../index.php">Index</a></p>';
         
 
