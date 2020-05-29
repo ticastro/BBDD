@@ -16,7 +16,7 @@ echo $_GET["lugar"];
   require("../config/conexion.php");
 
 $nombre_lugar = $_GET["lugar"];
-$nombre_lugar = "Museos Vaticanos"
+$nombre_lugar = "Museos Vaticanos";
 
   #Se construye la consulta como un string
 $query1 = "SELECT ciudad from lugar where nombre = '$nombre_lugar' ;" ;
