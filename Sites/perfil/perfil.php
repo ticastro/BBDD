@@ -76,6 +76,7 @@ echo 'Bienvenido a tu perfil.' ;
 
     <tr>
       <th>nº asiento</th>
+      <th>fecha compra</th>
       <th>fecha viaje</th>
       <th>hora salida</th>
       <th>origen</th>
@@ -86,7 +87,7 @@ echo 'Bienvenido a tu perfil.' ;
       <?php
         foreach ($datos as $p) {
 
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td></tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td></tr>";
 
       }
       ?>
