@@ -39,6 +39,9 @@ $query2 = "SELECT DISTINCT capacidad from viajes where vid = '$vid';";
   $result -> execute();
   $data2 = $result -> fetchAll();
 
+print_r ($data1);
+print_r ($data2);
+
 if ($data1[0][0] = ""){
 $data1[0][0] = 0;
 }
