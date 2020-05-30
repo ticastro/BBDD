@@ -15,7 +15,7 @@ $nombre_hotel = $_SESSION["nombre_hotel"];
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 
 
-if (date("Y-m-d") > $llegada && $llegada > $salida){
+if (date("Y-m-d") > $llegada || $llegada > $salida){
   echo 'Por favor ingresa fechas validas';
 echo '<a href="fecha_hotel.php">Volver</a></p>';
 }else{
