@@ -73,9 +73,11 @@ do {
 
 
 
-echo $asiento."\n";
-echo $tid"\n";
-echo $fecha_ingresada."\n";
+echo $asiento;
+echo "\n";
+echo $tid;
+echo "\n";
+echo $fecha_ingresada;
 
     /*
     $query5 = "INSERT INTO tickets(tid, asiento, fechaviaje) VALUES ('$tid', '$asiento', '$fecha_ingresada');" ;
