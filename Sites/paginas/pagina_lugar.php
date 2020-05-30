@@ -113,6 +113,6 @@ $query6 = "SELECT DISTINCT artistas.nombre FROM obras, lugar,artistas WHERE obra
   </table>
 
 <?php
-echo "<a href='../perfil/procesar_compra.php?nombre_lugar='$nombre_lugar'>Realizar compra de entrada al museo</a>"
+echo "<a href='../perfil/procesar_compra.php?nombre_lugar=$nombre_lugar'>Realizar compra de entrada al museo</a>"
 ?>
 <?php include('../templates/footer.html'); ?>
