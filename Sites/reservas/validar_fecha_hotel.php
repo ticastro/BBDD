@@ -19,7 +19,6 @@ if (date("Y-m-d") > $llegada || $llegada > $salida){
   echo 'Por favor ingresa fechas validas';
 echo '<a href="fecha_hotel.php">Volver</a></p>';
 }else{
-  unset($_SESSION["nombre_hotel"]);
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 require("../config/conexion.php");
 $uid = $_SESSION["uid"];
