@@ -6,7 +6,7 @@
 
 <body>
 <?php
-$fecha_ingresada = $_POST["fecha_ingresada"]
+$fecha_ingresada = $_POST["fecha_ingresada"];
 
 if (date("Y-m-d") > $fecha_ingresada){
   echo 'Por favor ingresar fecha futura';
