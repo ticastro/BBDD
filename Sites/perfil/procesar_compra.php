@@ -17,10 +17,11 @@ echo $hora_compra[0];
 echo $hora_compra[0][0]."asfd";
 $uid = $_SESSION["uid"];
 echo "uid".$uid;
+echo "nombre_lugar".$nombre_lugar;
 
 
 $query = "SELECT id_lugar from lugar WHERE nombre = '$nombre_lugar'; ";
-  $result = $db -> prepare($query);
+  $result = $db2 -> prepare($query);
   $result -> execute();
   $para_id = $result -> fetchAll();
 $id_lugar = $para_id[0][0];
