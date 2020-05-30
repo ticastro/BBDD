@@ -12,7 +12,6 @@ require("../config/conexion.php");
 echo 'Hoteles ' ;
 $vid = $_GET["vid"];
 $_SESSION["vid"] = $vid;
-print_r ($_SESSION);
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 
  $query2 = "SELECT DISTINCT nombre from hoteles; ";

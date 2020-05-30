@@ -37,12 +37,7 @@ $query4 = "SELECT MAX(rid) FROM reservas ;";
 
 $rid = $lista_rid[0][0] + 1;
 
-echo $llegada;
-echo $salida;
-echo $rid;
-echo $uid;
-echo $hid;
- /*   
+   
     $query5 = "INSERT INTO reservas(rid, checkin, chekout) VALUES ('$rid', '$llegada', '$salida');" ;
     $query6 = "INSERT INTO hace(uid, rid) VALUES ('$uid', '$rid');" ;
     $query7 = "INSERT INTO en_hotel(rid, hid) VALUES ('$rid', '$hid');" ;
@@ -56,7 +51,6 @@ echo $hid;
 
     $result = $db-> prepare($query7);
     $result -> execute();
-   */ 
 }
 ?>
 
