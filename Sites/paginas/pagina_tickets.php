@@ -22,7 +22,7 @@ echo 'Estas ciudades estan en nuestros planes de viajes. Ingresa destino y orige
 
 
 
-  $result = $db -> prepare($query1);
+  $result = $db -> prepare($query2);
   $result -> execute();
   $ciudades = $result -> fetchAll();
   ?>
