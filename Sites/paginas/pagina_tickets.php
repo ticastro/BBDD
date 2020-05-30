@@ -40,7 +40,7 @@ echo 'Estas ciudades estan en nuestros planes de viajes. Ingresa destino y orige
       <?php
         foreach ($ciudades as $p) {
 
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td><a href='../compra_ticket/mostrar_viaje.php?origen=$p[0]&destino=p[1]'>Obra</a></td></tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td><td><a href='../compra_ticket/mostrar_viaje.php?origen=$p[0]&destino=$p[1]'>Ver mas</a></td></tr>";
 
       }
       ?>
