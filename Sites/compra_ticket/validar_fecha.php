@@ -22,6 +22,7 @@ $fecha_ingresada = $_POST["fecha_ingresada"];
 
 echo $fecha_ingresada;
 echo $vid;
+print_r ($_SESSION);
 
   #Se construye la consulta como un string
 $query1 = "SELECT count(*) from (SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where tickets.fechaviaje = '$fecha_ingresada' AND para.vid = '$vid' AND viajes.vid = '$vid') AS foo group by foo.vid; ";
