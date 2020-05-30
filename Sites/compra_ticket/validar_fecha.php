@@ -38,23 +38,23 @@ $query2 = "SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from ticke
 
 
 if ($data1[0][0] <  $data2[0][1]){
-    echo "La fecha elegida es valida, tu reserva de viaje ha sido procesada. \n"
+    echo "La fecha elegida es valida, tu reserva de viaje ha sido procesada. \n";
 
 
 
 //SELECT DISTINCT  tickets.asiento, tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where para.vid = 10 AND viajes.vid = 10 AND tickets.tid = para.tid;
 
-    <?php
+$tid_valido = 0;
 $i = 0;
 do {
-    $i = $i + 1
+    $i = $i + 1;
 
     $query3 = "SELECT DISTINCT  tickets.asiento, tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where tickets.fechaviaje = '$fecha_ingresada' AND para.vid = '$vid' AND viajes.vid = '$vid' AND tickets.tid = para.tid AND tickets.asiento = $i;";
   $result = $db-> prepare($query3);
   $result -> execute();
   $data3 = $result -> fetchAll();
 
-  $tid_vadilo = 0
+  $tid_valido = 0;
 
   if ($data3[0][0] == ""){
     $asiento = $i;
@@ -65,7 +65,7 @@ do {
     $data4 = $result -> fetchAll(); 
 
     $tid = $data4[0][0] + 1 ;
-    $tid_valido = 1
+    $tid_valido = 1;
   }
 
     echo $i;
