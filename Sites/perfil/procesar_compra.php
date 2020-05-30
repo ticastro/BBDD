@@ -13,7 +13,8 @@ echo 'Compra procesada con exito' ;
 
 $nombre_lugar = $_GET["nombre_lugar"];
 $hora_compra = getdate();
-echo $hora_compra;
+echo $hora_compra[0];
+echo $hora_compra[0][0]."asfd";
 $uid = $_SESSION["uid"];
 
 
