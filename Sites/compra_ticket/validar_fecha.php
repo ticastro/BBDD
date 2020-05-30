@@ -16,7 +16,7 @@ echo '<a href="fecha_viaje.php">Volver</a></p>';
   require("../config/conexion.php");
 $vid = $_SESSION["vid"];
 unset($_SESSION["vid"]);
-$fecha_ingresada = $_POST["fecha_ingresada"]
+$fecha_ingresada = $_POST["fecha_ingresada"];
 
   #Se construye la consulta como un string
 $query1 = "SELECT count(*) from (SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where tickets.fechaviaje = '$fecha_ingresada' AND para.vid = '$vid' AND viajes.vid = '$vid') AS foo group by foo.vid; ";
