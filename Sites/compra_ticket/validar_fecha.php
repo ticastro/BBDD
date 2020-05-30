@@ -24,7 +24,10 @@ echo $fecha_ingresada;
 
   #Se construye la consulta como un string
 $query1 = "SELECT count(*) from (SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where tickets.fechaviaje = '$fecha_ingresada' AND para.vid = '$vid' AND viajes.vid = '$vid') AS foo group by foo.vid; ";
-$query2 = "SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where tickets.fechaviaje = '$fecha_ingresada' AND para.vid = '$vid' AND viajes.vid = '$vid';";
+
+//SELECT count(*) from (SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where tickets.fechaviaje = '2021-02-02' AND para.vid = 10 AND viajes.vid = 10) AS foo group by foo.vid;
+
+$query2 = "SELECT DISTINCT capacidad from viajes where vid = '$vid';";
 
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -36,8 +39,10 @@ $query2 = "SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from ticke
   $result -> execute();
   $data2 = $result -> fetchAll();
 
-
-if ($data1[0][0] <  $data2[0][1]){
+if ($data1[0][0] = ""){
+$data1[0][0] = 0;
+}
+if ($data1[0][0] <  $data2[0][0]){
     echo "La fecha elegida es valida, tu reserva de viaje ha sido procesada. \n";
 
 
