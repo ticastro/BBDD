@@ -25,7 +25,7 @@ $query = "SELECT id_lugar from lugar WHERE nombre = '$nombre_lugar'; ";
 $id_lugar = $para_id[0][0];
 
   #Se construye la consulta como un string
-  $query1 = "INSERT INTO entradas_museos(uid,id_lugar,fecha_compra_museo) VALUES ('$uid', '$id_lugar', '$hora_compra');" ;
+  $query1 = "INSERT INTO entradas_museos(uid,id_lugar,fecha_compra_museo) VALUES ('$uid', '$id_lugar', CURRENT_TIMESTAMP;" ;
 
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
