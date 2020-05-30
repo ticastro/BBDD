@@ -94,14 +94,13 @@ echo $fecha_ingresada;
     $result = $db-> prepare($query7);
     $result -> execute();
     */
-?>
 
 
 
     echo '<a href="../perfil/perfil.php">Ir a Mi Perfil</a></p>';
 
 }else{ 
-echo "No existe disponibilidad para esa fecha, selecciona otra por favor. \n"}
+echo "No existe disponibilidad para esa fecha, selecciona otra por favor. \n";}
 echo '<a href="../compra_ticket/fecha_viaje.php">Volver</a></p>';
 
 }
