@@ -13,7 +13,7 @@ if (date("Y-m-d") > $fecha_ingresada){
 echo '<a href="fecha_viaje.php">Volver</a></p>';
 }else{
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
+require("../config/conexion.php");
 $vid = $_SESSION["vid"];
 $uid = $_SESSION["uid"];
 $fecha_actual = getdate();
@@ -21,6 +21,7 @@ $fecha_actual = getdate();
 $fecha_ingresada = $_POST["fecha_ingresada"];
 
 echo $fecha_ingresada;
+echo $vid;
 
   #Se construye la consulta como un string
 $query1 = "SELECT count(*) from (SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where tickets.fechaviaje = '$fecha_ingresada' AND para.vid = '$vid' AND viajes.vid = '$vid') AS foo group by foo.vid; ";
