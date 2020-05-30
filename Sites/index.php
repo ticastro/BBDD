@@ -12,6 +12,8 @@ if ($_SESSION['k_username'] != "") {
  echo '<p><a href="login/logout.php">Logout</a></p>';
  echo '<p><a href="login/bajar_usuario.php">Eliminar cuenta</a></p>';
  echo '<p><a href="perfil/perfil.php">Mi perfil</a></p>';
+ echo '<p><a href="paginas/pagina_tickets.php">Ver tickets de transporte</a></p>';
+
 
 }else{
  echo '<p><a href="login/login.php">Login</a></p>';
