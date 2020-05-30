@@ -7,6 +7,8 @@
 
 <body>
 <?php
+require("../config/conexion.php");
+
 echo 'Hoteles ' ;
 $vid = $_GET["vid"];
 $_SESSION["vid"] = $vid;
