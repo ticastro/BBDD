@@ -13,11 +13,7 @@ echo 'Compra procesada con exito' ;
 
 $nombre_lugar = $_GET["nombre_lugar"];
 $hora_compra = getdate();
-echo $hora_compra[0];
-echo $hora_compra[0][0]."asfd";
 $uid = $_SESSION["uid"];
-echo "uid".$uid;
-echo "nombre_lugar".$nombre_lugar;
 
 
 $query = "SELECT id_lugar from lugar WHERE nombre = '$nombre_lugar'; ";
@@ -25,7 +21,6 @@ $query = "SELECT id_lugar from lugar WHERE nombre = '$nombre_lugar'; ";
   $result -> execute();
   $para_id = $result -> fetchAll();
 $id_lugar = $para_id[0][0];
-echo "ido_lugar".$id_lugar;
   #Se construye la consulta como un string
   $query1 = "INSERT INTO entradas_museos(uid,id_lugar,fecha_compra_museo) VALUES ('$uid', '$id_lugar', CURRENT_TIMESTAMP);" ;
 

@@ -65,4 +65,50 @@ echo 'Bienvenido a tu perfil.' ;
       
   </table>
 
+<?php
+  $query10 = "SELECT * FROM entradas_museos where uid = '$uid' ;" ;
+
+
+  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+  $result = $db -> prepare($query10);
+  $result -> execute();
+  $para_ultimo = $result -> fetchAll();
+
+
+ $query11 = "SELECT museos.id_lugar, museos.hr_apertura, museos.hr_cierre,  lugar.nombre FROM museos,lugar WHERE museos.id_lugar = lugar.id_lugar ;" ;
+
+  $result = $db2 -> prepare($query11);
+  $result -> execute();
+  $lugares_ultimo = $result -> fetchAll();
+
+
+?>
+  <table>
+    <tr>
+      <th>Tus reservas</th>
+    </tr>
+    <tr>
+    <th>Nombre museo</th>
+    <th>Fecha de compra</th>
+    <th>Horario de apertura</th>
+    <th>Horario de cierre</th>
+  </tr>
+  
+      <?php
+        foreach ($para_ultimo as $p) {
+          $ultimo_id = $p[1];
+
+          foreach ($lugares_ultimo as $k) {
+          if ($ultimo_id == $k[0]){
+          
+          echo "<tr><td>$k[3]</td><td>$p[2]</td><td>$k[1]</td><td>$k[2]</td></tr>";  
+          }
+          }
+          
+
+      }
+      ?>
+      
+  </table>
+
 <?php include('../templates/footer.html'); ?>
