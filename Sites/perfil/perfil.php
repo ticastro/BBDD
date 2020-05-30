@@ -75,7 +75,7 @@ echo 'Bienvenido a tu perfil.' ;
   $para_ultimo = $result -> fetchAll();
 
 
- $query11 = "SELECT museos.id_lugar, museos.hr_apertura, museos.hr_cierre,  lugar.nombre FROM museos,lugar WHERE museos.id_lugar = lugar.id_lugar ;" ;
+ $query11 = "SELECT museo.id_lugar, museo.hr_apertura, museo.hr_cierre,  lugar.nombre FROM museo,lugar WHERE museo.id_lugar = lugar.id_lugar ;" ;
 
   $result = $db2 -> prepare($query11);
   $result -> execute();
