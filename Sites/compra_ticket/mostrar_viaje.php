@@ -41,7 +41,7 @@ $query1 = "SELECT DISTINCT ultimo.transporte, ultimo.horasalida, ultimo.precio, 
       <?php
         foreach ($data1 as $p) {
 
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[4]</td><a href='fecha_viaje.php?vid='$p[5]'>Elegir fechas</a></td></tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[4]</td><td><a href='fecha_viaje.php?vid='$p[5]'>Elegir fechas</a></td></tr>";
 
       }
       ?>
