@@ -20,14 +20,11 @@ $fecha_actual = getdate();
 //unset($_SESSION["vid"]);
 $fecha_ingresada = $_POST["fecha_ingresada"];
 
-echo $fecha_ingresada;
-echo $vid;
-print_r ($_SESSION);
 
   #Se construye la consulta como un string
 $query1 = "SELECT count(*) from (SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where tickets.fechaviaje = '$fecha_ingresada' AND para.vid = '$vid' AND viajes.vid = '$vid') AS foo group by foo.vid; ";
 
-//SELECT count(*) from (SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where tickets.fechaviaje = '2021-02-02' AND para.vid = 10 AND viajes.vid = 10) AS foo group by foo.vid;
+//SELECT count(*) from (SELECT DISTINCT  tickets.tid, viajes.capacidad, viajes.vid from tickets,viajes,para where tickets.fechaviaje = '400' AND para.vid = 10 AND viajes.vid = 10) AS foo group by foo.vid;
 
 $query2 = "SELECT DISTINCT capacidad from viajes where vid = '$vid';";
 
@@ -41,8 +38,6 @@ $query2 = "SELECT DISTINCT capacidad from viajes where vid = '$vid';";
   $result -> execute();
   $data2 = $result -> fetchAll();
 
-print_r ($data1);
-print_r ($data2);
 
 if ($data1[0][0] = ""){
 $data1[0][0] = 0;
@@ -78,18 +73,13 @@ do {
     $tid_valido = 1;
   }
 
-    echo $i;
+    
 } while ($tid_valido = 0);
 
 
 
-echo $asiento;
-echo "\n";
-echo $tid;
-echo "\n";
-echo $fecha_ingresada;
 
-    /*
+    
     $query5 = "INSERT INTO tickets(tid, asiento, fechaviaje) VALUES ('$tid', '$asiento', '$fecha_ingresada');" ;
     $query6 = "INSERT INTO para(tid, vid) VALUES ('$tid', '$vid');" ;
     $query7 = "INSERT INTO compra_ticket(tid, uid, fechacompra) VALUES ('$tid', '$uid', '$fecha_actual');" ;
@@ -103,7 +93,8 @@ echo $fecha_ingresada;
 
     $result = $db-> prepare($query7);
     $result -> execute();
-    */
+    
+    
 
 
 
