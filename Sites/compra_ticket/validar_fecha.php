@@ -82,7 +82,7 @@ do {
     
     $query5 = "INSERT INTO tickets(tid, asiento, fechaviaje) VALUES ('$tid', '$asiento', '$fecha_ingresada');" ;
     $query6 = "INSERT INTO para(tid, vid) VALUES ('$tid', '$vid');" ;
-    $query7 = "INSERT INTO compra_ticket(tid, uid, fechacompra) VALUES ('$tid', '$uid', '$fecha_actual');" ;
+    $query7 = "INSERT INTO compra_ticket(tid, uid, fechacompra) VALUES ('$tid', '$uid',  CURRENT_TIMESTAMP);" ;
 
 
     $result = $db-> prepare($query5);
