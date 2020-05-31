@@ -14,6 +14,7 @@ if ($_SESSION['k_username'] != "") {
  echo '<p><a href="perfil/perfil.php">Mi perfil</a></p>';
  echo '<p><a href="paginas/pagina_tickets.php">Ver tickets de transporte</a></p>';
   echo '<p><a href="reservas/reservar_hotel.php">Hacer reservas para hoteles</a></p>';
+  echo '<p><a href="consultas_arte/consulta_artistas.php">Ver Artistas</a></p>';
 
 
 }else{
