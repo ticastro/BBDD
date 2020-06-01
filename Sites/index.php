@@ -5,6 +5,17 @@ session_start();
 <?php include('templates/header.html');   ?>
 
 
+<body>
+  <h1 align="center"> Agencia de Viajes</h1>
+  <p style="text-align:center;">Ingresa para organizar tu próximo viaje.</p>
+
+
+</body>
+</html>
+
+
+
+
 <?php
 echo 'Bienvenido, ';
 if ($_SESSION['k_username'] != "") {
@@ -25,10 +36,4 @@ echo '<p><a href="login/sign_up.php">Registrarme</a></p>';
 }
 ?>
 
-<body>
-  <h1 align="center"> Agencia de Viajes</h1>
-  <p style="text-align:center;">Ingresa para organizar tu próximo viaje.</p>
 
-
-</body>
-</html>
