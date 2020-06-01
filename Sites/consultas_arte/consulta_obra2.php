@@ -87,7 +87,7 @@
 
 	<table>
     <tr>
-      <th>Nombre Obra</th>
+      <th>Nombre Lugar</th>
       <th>Ciudad</th>
       <th>Pais</th>
       <th>Lugar</th>

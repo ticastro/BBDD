@@ -26,11 +26,12 @@
     <tr>
       <th>Nombre</th>
       <th>Link</th>
+      <th>Agregar a Favoritos</th>
     </tr>
 
       <?php
         foreach ($artistas as $a) {
-          echo "<tr><td>$a[0]</td><td><a href='consulta_artista.php?nombre_artista=$a[0]'>Ver Artista</a></p> </td></tr>";
+          echo "<tr><td>$a[0]</td><td><a href='consulta_artista.php?nombre_artista=$a[0]'>Ver Artista</a></p> </td><td><a href='../paginas/validar_favorito.php?nombre_artista=$a[0]'>Agregar</a></p> </td></tr>";
       }
       ?>
       

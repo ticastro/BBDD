@@ -43,15 +43,15 @@ $query4 = "SELECT hr_apertura, hr_cierre from iglesia, lugar where lugar.nombre 
 
 
 <?php
-echo "\n"."Esta en la ciudad".$data1[0][0];
-echo ", del país ".$data2[0][0];
+echo "\n"."Esta en la ciudad ".$data1[0][0];
+echo ", del país  ".$data2[0][0];
 if ($data3 [0][0] != ""){
-echo "\n"."El museo abre a las ".$data3[0][0];
-echo "y cierra a las ".$data3[0][1];
-echo "con un precio de ".$data3[0][2];
+echo "\n".". El museo abre a las ".$data3[0][0];
+echo " y cierra a las ".$data3[0][1];
+echo " con un precio de ".$data3[0][2];
 }else{
-echo "\n"."La iglesia abre a las ".$data4[0][0];
-echo "y cierra a las ".$data4[0][1];
+echo "\n".". La iglesia abre a las ".$data4[0][0];
+echo " y cierra a las ".$data4[0][1];
 }
 
 
@@ -111,8 +111,17 @@ $query6 = "SELECT DISTINCT artistas.nombre FROM obras, lugar,artistas WHERE obra
       ?>
       
   </table>
-
 <?php
+
+if ($data3 [0][0] != ""){
 echo "<a href='../perfil/procesar_compra.php?nombre_lugar=$nombre_lugar'>Realizar compra de entrada al museo</a>"
+}
+
+
+
+
+
+
+
 ?>
 <?php include('../templates/footer.html'); ?>
