@@ -20,7 +20,7 @@ $nombre_artista = $_GET["nombre_artista"];
 
   #Se construye la consulta como un string
 $query1 = "SELECT MAX(fid) from favoritos ;" ;
-  $result = $db2 -> prepare($query1);
+  $result = $db -> prepare($query1);
   $result -> execute();
   $data1 = $result -> fetchAll();
 $fid = $data1[0][0] + 1;
@@ -28,7 +28,7 @@ $uid = $_SESSION["uid"];
 
 
 $query2 = "INSERT INTO favoritos VALUES ('$fid', '$uid', '$nombre_artista');" ;
-  $result = $db2 -> prepare($query2);
+  $result = $db -> prepare($query2);
   $result -> execute();
 
 echo "<a href='../consultas_arte/consulta_artistas.php'>Volver</a>"
