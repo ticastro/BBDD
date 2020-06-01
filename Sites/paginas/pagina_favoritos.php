@@ -40,7 +40,7 @@ $query1 = "SELECT nombre_artista from favoritos where uid = '$uid';" ;
   
       <?php
         foreach ($data1 as $p) {
-          echo "<tr><td>$p[0]</td><td><a href='pagina_artista.php?nombre=$p[0]'>Ver Artista</a></td></tr>";
+          echo "<tr><td>$p[0]</td><td><a href='../consultas_arte/consulta_artista.php?nombre_artista=$p[0]'>Ver Artista</a></td></tr>";
           
 
       }
