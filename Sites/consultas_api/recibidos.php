@@ -8,7 +8,7 @@
 
 
   $url = "https://lit-plateau-15934.herokuapp.com/messages";
-  $json = file.get_contents($url);
+  $json = file_get_contents($url);
   $datos = json_decode($json, True);
   echo $datos ;
 
