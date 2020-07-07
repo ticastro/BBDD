@@ -11,6 +11,7 @@
   $json = file_get_contents($url);
   $datos = json_decode($json, True);
   echo $datos ;
+  foreach($datos as $p){ echo $p};
 
 
 
