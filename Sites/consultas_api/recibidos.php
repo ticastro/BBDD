@@ -18,18 +18,6 @@
 
 
 
-  <table>
-    <tr>
-      <th>Nombre</th>
-    </tr>
-
-      <?php
-        foreach ($artistas as $a) {
-          echo "<tr><td>$a[0]</td>";
-          echo "<input type='checkbox' name='products[]' value='".$a['title']."'>"</tr>";
-      }
-      ?>
-
-  </table>
+ 
 
 <?php include('../templates/footer.html'); ?>
