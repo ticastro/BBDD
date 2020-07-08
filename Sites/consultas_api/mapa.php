@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <html>
  <head>
-  <title>Ayudantia Leaflet</title>
+  <title>Mapa</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
 	integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
 	crossorigin=""/>
@@ -46,24 +46,14 @@ foreach ($datos as $d ) {
         $contador += 1;
     }}}
 }
-echo "hola";
-echo $fecha_inicial."<br />";
-echo $fecha_final."<br />";
-print_r($lista);
 
 
-/**<?php echo '<p>Hello World</p>'; ?> 
+
+<?php echo '<p>Hello World</p>'; ?> 
  <?php 
     $lat = -33.5;
     $long = -70.5;
-    $marker_list = [
-        ["lat" => -33.4,
-        "long" => -70.5],
-        ["lat" => -33.6,
-        "long" => -70.5],
-        ["lat" => -33.5,
-        "long" => -70.6],
-    ];
+
 ?>
 
  <div id="mapid" style="height: 300px"></div>
@@ -79,11 +69,11 @@ print_r($lista);
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    <?php foreach($marker_list as $marker) {
+    <?php foreach($lista as $marker) {
         echo 
         'L.marker([' . $marker["lat"] . ',' . $marker["long"] . ']).addTo(map);';
     } ?>
 </script>
 </html> 
 
-*/
+
