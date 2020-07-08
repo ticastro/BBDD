@@ -17,10 +17,11 @@
       <?php
 
 
-       echo "Tus mensajes son:";
+       echo "Tus mensajes son: "."\n";
        foreach ($datos as $p){ 
             if($p["receptant"] == $uid ){
               print_r($p);
+
 
             }
             
