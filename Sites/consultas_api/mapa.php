@@ -47,7 +47,7 @@ foreach ($datos as $d ) {
     }}}
 }
 
-
+>
 
 <?php echo '<p>Hello World</p>'; ?> 
  <?php 
