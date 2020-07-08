@@ -26,7 +26,7 @@ $contador = 0;
 foreach ($datos as $d ) {
     echo $d["date"]."dasff";
     $hola = date("Y-m-d", $d["date"]);
-    echo $hola;
+    echo $hola."<-- es el ultimo";
 
     if ($d["sender"] == $uid && $fecha_inicial >= date("Y-m-d",$d["date"]) && $fecha_final <= date("Y-m-d",$d["date"])){
         $coordenadas = array();
