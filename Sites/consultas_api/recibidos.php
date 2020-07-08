@@ -36,14 +36,6 @@
       
     </tr>
 
-      <?php
-        foreach ($datos as $p) 
-          { if (intval($p["receptant"]) == $uid){
-            echo $p[0];
-          echo "<tr><td>$p['date']</td><td>$p['lat']</td><td>$p['long']</td><td>$p['mid']</td><td>$p['receptant']</td><td>$p['sender']</td><td>$p['message']</td></tr>";
-        }
-      }
-      ?>
       
   </table>
 
