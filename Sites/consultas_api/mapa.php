@@ -29,8 +29,9 @@ foreach ($datos as $d ) {
         $coordenadas["lat"] = $d["lat"];
         $coordenadas["long"] = $d["long"];
         $lista[$str_contador] = $coordenadas;
-        $contador += 1
+        $contador += 1;
     }
+}
 print_r($lista);
 
 
