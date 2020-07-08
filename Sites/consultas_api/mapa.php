@@ -26,7 +26,7 @@ $contador = 0;
 foreach ($datos as $d ) {
     $fecha = new DateTime($d["date"]);
     
-    if ($d["sender"] == $uid && $fecha_inicial >= $fecha && $fecha_final <= $fecha){
+    if ($d["sender"] == $uid && $fecha_inicial <= $fecha && $fecha_final >= $fecha){
         $coordenadas = array();
         $str_contador = strval($contador);
         $coordenadas["lat"] = $d["lat"];
