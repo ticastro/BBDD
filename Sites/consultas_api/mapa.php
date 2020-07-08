@@ -23,11 +23,12 @@ $datos = json_decode($json, True);
 $lista = array();
 $contador = 0;
 foreach ($datos as $d ) {
-    if ($d["sender"] == $uid && $fecha_inicial >= dateval($d["date"]) && $fecha_final <= dateval($d["date"])){
+    if ($d["sender"] == $uid && $fecha_inicial >= date("Y-m-d",$d["date"]) && $fecha_final <= date("Y-m-d",$d["date"])){
         $coordenadas = array();
         $str_contador = strval($contador);
         $coordenadas["lat"] = $d["lat"];
         $coordenadas["long"] = $d["long"];
+        $coordenadas["date"] = $d["date"];
         $lista[$str_contador] = $coordenadas;
         $contador += 1;
     }
