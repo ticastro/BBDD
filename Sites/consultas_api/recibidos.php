@@ -16,9 +16,11 @@
 
       <?php
 
+
+       echo "Tus mensajes son:"
        foreach ($datos as $p){ 
             if($p["receptant"] == $uid ){
-              echo $p[0];
+              print_r($p);
 
             }
             
@@ -45,7 +47,7 @@
 
 
 
-  ?>
+
 
 
 
