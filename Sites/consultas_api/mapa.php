@@ -23,7 +23,7 @@ $datos = json_decode($json, True);
 $lista = array();
 $contador = 0;
 foreach ($datos as $d ) {
-    if ($d["sender"] == $uid && $fecha_inicial >= dateval($d["date"]) && $fecha_final <= dateval($d["date"])){
+    if ($d["sender"] == $uid){
         $coordenadas = array();
         $str_contador = strval($contador);
         $coordenadas["lat"] = $d["lat"];
