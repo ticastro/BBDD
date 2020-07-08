@@ -16,7 +16,8 @@
 
      <?php
         foreach ($datos as $p) 
-          { if (intval($p["receptant"]) == $uid){
+          { echo intval($p["receptant"];
+            if (intval($p["receptant"]) == intval($uid)){
             echo $p[0];
             echo $p['date'];
         }
