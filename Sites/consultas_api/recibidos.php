@@ -14,16 +14,7 @@
   $datos = json_decode($json, True);
 ?>
 
-     <?php
-        foreach ($datos as $p){ 
-            if($p["receptant"] == $uid ){
-              echo $p["message"];
 
-            }
-            
-        }
-      
-      ?>
 
   <table>
     <tr>
@@ -37,7 +28,18 @@
 
       
     </tr>
+      
+      <?php
 
+       foreach ($datos as $p){ 
+            if($p["receptant"] == $uid ){
+              "<tr><td>$p['message']</td></tr>";
+
+            }
+            
+        }
+
+      ?>
       
   </table>
 
