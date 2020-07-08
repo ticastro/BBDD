@@ -32,12 +32,11 @@ $contador = 0;
 foreach ($datos as $d ) {
     $fecha = strval($d["date"]);
     $fecha_date = strtotime($fecha);
-    if ($fecha_inicial_date <= $fecha_date && $fecha_final >= $fecha_date){
-    echo $fecha."<br />";    
-    }
     
 
-    if ($d["sender"] == $uid && $fecha_inicial <= $fecha_date && $fecha_final >= $fecha_date){
+    if ($d["sender"] == $uid ){
+        if ($fecha_inicial <= $fecha_date){
+            if ($fecha_final >= $fecha_date){
         $coordenadas = array();
         $str_contador = strval($contador);
         $coordenadas["lat"] = $d["lat"];
@@ -45,7 +44,7 @@ foreach ($datos as $d ) {
         $coordenadas["date"] = $d["date"];
         $lista[$str_contador] = $coordenadas;
         $contador += 1;
-    }
+    }}}
 }
 echo "hola";
 echo $fecha_inicial."<br />";
