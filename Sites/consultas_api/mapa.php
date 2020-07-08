@@ -44,6 +44,7 @@ foreach ($datos as $d ) {
         $coordenadas["date"] = $d["date"];
         $lista[$str_contador] = $coordenadas;
         $contador += 1;
+        echo "x";
     }}}
 }
 
