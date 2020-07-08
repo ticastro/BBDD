@@ -17,7 +17,7 @@
       <?php
 
 
-       echo "Tus mensajes son: "."\n";
+       echo "Tus mensajes son: ".PHP_EOL;
        foreach ($datos as $p){ 
             if($p["receptant"] == $uid ){
               print_r($p);
