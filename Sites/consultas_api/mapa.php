@@ -34,8 +34,8 @@ foreach ($datos as $d ) {
         $contador += 1;
     }
 }
-echo $fecha_inicial."<br />"
-echo $fecha_final."<br />"
+echo $fecha_inicial."<br />";
+echo $fecha_final."<br />";
 print_r($lista);
 
 
