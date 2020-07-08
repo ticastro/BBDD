@@ -20,7 +20,7 @@
        echo "Tus mensajes son: "."<br />";
        foreach ($datos as $p){ 
             if($p["receptant"] == $uid ){
-              print_r($p);
+              echo "fecha: ".$p['date']."latitud: ".$p['lat'];
               echo " "."<br />";
 
 
