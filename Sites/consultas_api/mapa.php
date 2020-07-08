@@ -24,11 +24,8 @@ $lista = array();
 $contador = 0;
 
 foreach ($datos as $d ) {
-    echo $d["date"]."dasff";
-    $hola = date("Y-m-d", $d["date"]);
-    echo $hola."<-- es el ultimo";
 
-    if ($d["sender"] == $uid && $fecha_inicial >= date("Y-m-d",$d["date"]) && $fecha_final <= date("Y-m-d",$d["date"])){
+    if ($d["sender"] == $uid && $fecha_inicial >= $d["date"] && $fecha_final <= $d["date"]){
         $coordenadas = array();
         $str_contador = strval($contador);
         $coordenadas["lat"] = $d["lat"];
