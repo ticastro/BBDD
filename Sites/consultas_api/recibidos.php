@@ -21,6 +21,7 @@
        foreach ($datos as $p){ 
             if($p["receptant"] == $uid ){
               print_r($p);
+              echo " "."<br />";
 
 
             }
