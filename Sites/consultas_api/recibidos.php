@@ -17,8 +17,11 @@
      <?php
         foreach ($datos as $p) 
           { 
-            echo $p[0];
-            echo $p['date'];
+            echo $p["receptant"];
+            echo "xx";
+            echo $uid;
+            echo "xx";
+
         }
       
       ?>
