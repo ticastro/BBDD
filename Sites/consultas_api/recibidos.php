@@ -14,7 +14,14 @@
   $datos = json_decode($json, True);
 ?>
 
-
+     <?php
+        foreach ($datos as $p) 
+          { if (intval($p["receptant"]) == $uid){
+            echo $p[0];
+            echo $p['date'];
+        }
+      }
+      ?>
 
   <table>
     <tr>
