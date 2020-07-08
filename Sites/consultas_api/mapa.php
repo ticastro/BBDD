@@ -20,13 +20,20 @@ $url = "https://lit-plateau-15934.herokuapp.com/messages";
 $json = file_get_contents($url);
 $datos = json_decode($json, True);
 
+$fecha_inicial_str = strval($fecha_inicial);
+$fecha_final_str = strval($fecha_final);
+
+$fecha_inicial_date = strtotime($fecha_inicial_str);
+$fecha_final_date = strtotime($fecha_final_str);
+
 $lista = array();
 $contador = 0;
 
 foreach ($datos as $d ) {
-    $fecha = date("Y-m-d", $d["date"]);
-    
-    if ($d["sender"] == $uid && $fecha_inicial <= $fecha && $fecha_final >= $fecha){
+    $fecha = strval($d["date"]);
+    $fecha_date = strtotime($fecha);
+
+    if ($d["sender"] == $uid && $fecha_inicial <= $fecha_date && $fecha_final >= $fecha_date){
         $coordenadas = array();
         $str_contador = strval($contador);
         $coordenadas["lat"] = $d["lat"];
