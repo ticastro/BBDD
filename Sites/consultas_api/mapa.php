@@ -32,7 +32,10 @@ $contador = 0;
 foreach ($datos as $d ) {
     $fecha = strval($d["date"]);
     $fecha_date = strtotime($fecha);
-    echo $fecha;
+    if ($fecha_inicial_date <= $fecha_date){
+    echo $fecha."<br />";    
+    }
+    
 
     if ($d["sender"] == $uid && $fecha_inicial <= $fecha_date && $fecha_final >= $fecha_date){
         $coordenadas = array();
