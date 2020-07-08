@@ -15,13 +15,12 @@
 ?>
 
      <?php
-        foreach ($datos as $p) 
-          { 
-            echo $p["receptant"];
-            echo "xx";
-            echo $uid;
-            echo "xx";
+        foreach ($datos as $p){ 
+            if($p["receptant"] == $uid ){
+              echo $p["message"];
 
+            }
+            
         }
       
       ?>
