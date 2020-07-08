@@ -14,7 +14,7 @@
 
 $fecha_inicial = $_POST["fecha_inicial"];
 $fecha_final = $_POST["fecha_final"];
-$uid = $_SESSION["uid"]
+$uid = $_SESSION["uid"];
 
 $url = "https://lit-plateau-15934.herokuapp.com/messages";
 $json = file_get_contents($url);
