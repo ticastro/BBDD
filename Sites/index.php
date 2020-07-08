@@ -28,6 +28,7 @@ if ($_SESSION['k_username'] != "") {
   echo '<p><a href="consultas_arte/consulta_artistas.php">Ver Artistas</a></p>';
   echo '<p><a href="paginas/pagina_favoritos.php">Ver mis Artistas favoritos</a></p>';
   echo '<p><a href="consultas_api/recibidos.php">Ver mis mensajes recibidos</a></p>';
+  echo '<p><a href="consultas_api/enviados.php">Ver mis mensajes enviados</a></p>';
 
 
 }else{
