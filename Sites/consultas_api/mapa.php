@@ -50,7 +50,8 @@ foreach ($datos as $d ) {
 ?>
 
 <?php echo '<p>Hello World</p>'; ?> 
- <?php 
+ <?php
+ print_r($lista); 
     $lat = -33.5;
     $long = -70.5;
 
