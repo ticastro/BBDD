@@ -32,7 +32,7 @@ $contador = 0;
 foreach ($datos as $d ) {
     $fecha = strval($d["date"]);
     $fecha_date = strtotime($fecha);
-    if ($fecha_inicial_date <= $fecha_date){
+    if ($fecha_inicial_date <= $fecha_date && $fecha_final >= $fecha_date){
     echo $fecha."<br />";    
     }
     
