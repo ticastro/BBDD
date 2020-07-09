@@ -64,7 +64,7 @@ foreach ($datos as $d ) {
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
 <script>
-    var map = L.map('mapid').setView([<?php echo $lat ?>, <?php echo $long ?>], 100);
+    var map = L.map('mapid').setView([<?php echo $lat ?>, <?php echo $long ?>], 5);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
