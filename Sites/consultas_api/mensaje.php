@@ -9,7 +9,7 @@
   $username = $_POST["username"];
 
   require("../config/conexion.php");
-  $query = "SELECT uid FROM usuarios WHERE username = $username ;";
+  $query = "SELECT uid FROM usuarios WHERE username = 'JasonKemp' ;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
   $result = $db -> prepare($query);
