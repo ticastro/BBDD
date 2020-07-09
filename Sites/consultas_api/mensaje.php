@@ -24,7 +24,7 @@ $uid_destino_str = strval($uid_destino_int);
 print_r($uid_destino);
 
   $fecha_hoy = getdate();
-  $fecha_hoy_str = strval($fecha_hoy["year"])."-".strval($fecha_hoy["month"])."-".strval($fecha_hoy["mday"]);
+  $fecha_hoy_str = strval($fecha_hoy["year"])."-".strval($fecha_hoy["mon"])."-".strval($fecha_hoy["mday"]);
 
 echo "La fecha de hoy es: ".$fecha_hoy_str."<br />";
 echo "El sender es: ".strval($uid)."<br />";
