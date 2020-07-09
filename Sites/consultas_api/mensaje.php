@@ -16,10 +16,15 @@
   $result -> execute();
   $uid_destino = $result -> fetchAll();  ## obtengo receptant
 
+
+
   foreach ($uid_destino as $u ) {
     $uid_destino_int = intval($u[0]);
     }
 $uid_destino_str = strval($uid_destino_int);
+if ($uid_destino_str == ""){
+  echo "El usuario no es valido";
+}else{
 
 print_r($uid_destino);
 
@@ -35,10 +40,6 @@ echo "El receptant es: ".$uid_destino_str."<br />";
   $url = "https://lit-plateau-15934.herokuapp.com/messages";
   $json = file_get_contents($url);
   $datos = json_decode($json, True);
-?>
-
-<?php
-
 
 
 foreach ($datos as $p){ 
@@ -46,15 +47,14 @@ foreach ($datos as $p){
     $coordenadas = array();
     $coordenadas["long"] = $p["long"];
     $coordenadas["lat"] = $p["lat"];
-
             }          
         }
-
 if (isset($coordenadas["lat"])){
 #agregar codigo de que hacer si estan seteadas
 }else{
   $coordenadas["lat"] = -33.5;
   $coordenadas["long"] = -70.5;
+}
 }
 
 echo "Las coordenadas de envio son: Lat: ".strval($coordenadas["lat"])." Long: ".strval($coordenadas["long"]);
