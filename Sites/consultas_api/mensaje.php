@@ -7,7 +7,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   
   $username = $_POST["username"];
-
+echo "El username ingresado es: ".$username;
   require("../config/conexion.php");
   $query = "SELECT uid FROM usuarios WHERE username = 'JasonKemp' ;";
 
