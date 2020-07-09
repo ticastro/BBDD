@@ -39,8 +39,8 @@ foreach ($datos as $d ) {
             if ($fecha_final_date >= $fecha_date){
         $coordenadas = array();
         $str_contador = strval($contador);
-        $coordenadas["lat"] = $d["lat"];
-        $coordenadas["long"] = $d["long"];
+        $coordenadas["lat"] = intval($d["lat"]);
+        $coordenadas["long"] = intval($d["long"]);
         $coordenadas["date"] = $d["date"];
         $lista[$str_contador] = $coordenadas;
         $contador += 1;
@@ -56,14 +56,7 @@ foreach ($datos as $d ) {
 
     $lat = -33.5;
     $long = -70.5;
-    $marker_list = [
-        ["lat" => -33.4,
-        "long" => -70.5],
-        ["lat" => -33.6,
-        "long" => -70.5],
-        ["lat" => -33.5,
-        "long" => -70.6],
-    ];
+
 ?>
 
  <div id="mapid" style="height: 300px"></div>
@@ -79,7 +72,7 @@ foreach ($datos as $d ) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    <?php foreach($marker_list as $marker) {
+    <?php foreach($lista as $marker) {
         echo 
         'L.marker([' . $marker["lat"] . ',' . $marker["long"] . ']).addTo(map);';
     } ?>
