@@ -52,7 +52,10 @@ foreach ($datos as $d ) {
 
 <?php echo '<p>Hello World</p>'; ?> 
  <?php
- print_r($lista); 
+ print_r($lista);
+ foreach ($lista as $key ) {
+     echo $key["lat"];
+ }
     $lat = -33.5;
     $long = -70.5;
 
