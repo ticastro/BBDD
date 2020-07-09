@@ -44,7 +44,6 @@ foreach ($datos as $d ) {
         $coordenadas["date"] = $d["date"];
         $lista[$str_contador] = $coordenadas;
         $contador += 1;
-        echo "x";
     }}}
 }
 
@@ -52,7 +51,6 @@ foreach ($datos as $d ) {
 
 
  <?php
- print_r($lista);
 
     $lat = -33.5;
     $long = -70.5;
@@ -66,7 +64,7 @@ foreach ($datos as $d ) {
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
 <script>
-    var map = L.map('mapid').setView([<?php echo $lat ?>, <?php echo $long ?>], 10);
+    var map = L.map('mapid').setView([<?php echo $lat ?>, <?php echo $long ?>], 100);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -79,4 +77,6 @@ foreach ($datos as $d ) {
 </script>
 </html> 
 
+
+<?php include('../templates/footer.html'); ?>
 
