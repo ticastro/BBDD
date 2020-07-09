@@ -21,6 +21,7 @@
     }
 $uid_destino_str = strval($uid_destino_int);
 
+print_r($uid_destino)
 
   $fecha_hoy = getdate();
   $fecha_hoy_str = strval($fecha_hoy["year"])."-".strval($fecha_hoy["month"])."-".strval($fecha_hoy["mday"]);
