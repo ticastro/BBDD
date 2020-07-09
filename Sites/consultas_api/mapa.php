@@ -34,7 +34,6 @@ foreach ($datos as $d ) {
     $fecha_date = strtotime($fecha);
 
 
-    if ($d["sender"] == $uid ){
         if ($fecha_inicial_date <= $fecha_date){
             if ($fecha_final_date >= $fecha_date){
         $coordenadas = array();
@@ -46,7 +45,7 @@ foreach ($datos as $d ) {
         $contador += 1;
         echo "x";
     }}}
-}
+
 
 ?>
 
