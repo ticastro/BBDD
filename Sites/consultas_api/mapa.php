@@ -39,8 +39,8 @@ foreach ($datos as $d ) {
             if ($fecha_final_date >= $fecha_date){
         $coordenadas = array();
         $str_contador = strval($contador);
-        $coordenadas["lat"] = intval($d["lat"]);
-        $coordenadas["long"] = intval($d["long"]);
+        $coordenadas["lat"] = floatval($d["lat"]);
+        $coordenadas["long"] = floatval($d["long"]);
         $coordenadas["date"] = $d["date"];
         $lista[$str_contador] = $coordenadas;
         $contador += 1;
