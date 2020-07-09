@@ -50,15 +50,20 @@ foreach ($datos as $d ) {
 
 ?>
 
-<?php echo '<p>Hello World</p>'; ?> 
+
  <?php
  print_r($lista);
- foreach ($lista as $key ) {
-     echo $key["lat"];
- }
+
     $lat = -33.5;
     $long = -70.5;
-
+    $marker_list = [
+        ["lat" => -33.4,
+        "long" => -70.5],
+        ["lat" => -33.6,
+        "long" => -70.5],
+        ["lat" => -33.5,
+        "long" => -70.6],
+    ];
 ?>
 
  <div id="mapid" style="height: 300px"></div>
@@ -74,7 +79,7 @@ foreach ($datos as $d ) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    <?php foreach($lista as $marker) {
+    <?php foreach($marker_list as $marker) {
         echo 
         'L.marker([' . $marker["lat"] . ',' . $marker["long"] . ']).addTo(map);';
     } ?>
