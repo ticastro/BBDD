@@ -50,7 +50,7 @@ if (isset($coordenadas["lat"])){
 }else{
   $coordenadas["lat"] = -33.5;
   $coordenadas["long"] = -70.5;
-}
+
 
 
 echo "Las coordenadas de envio son: Lat: ".strval($coordenadas["lat"])." Long: ".strval($coordenadas["long"]);
@@ -93,5 +93,6 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
     // close connection
     curl_close($ch)
+}
 ?>
 <?php include('../templates/footer.html'); ?>
