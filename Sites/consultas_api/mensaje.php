@@ -74,7 +74,7 @@ $url = 'https://lit-plateau-15934.herokuapp.com/messages';
        'date' => $fecha_hoy_str,
        'lat' => strval($coordenadas["lat"]),
        'long' => strval($coordenadas["long"]),
-       'message' => $message,
+       'message' => $mensaje,
        'receptant' => $uid_destino_str,
        'sender' => strval($uid),
     );
