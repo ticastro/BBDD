@@ -23,7 +23,9 @@ $mensaje = $_POST["message"];
 $uid_destino_str = strval($uid_destino_int);
 if ($uid_destino_str == ""){
   echo "El usuario no es valido";
+  $entrar_a = False;
 }else{
+  $entrar_a = True;
 
 
   $fecha_hoy = getdate();
@@ -50,7 +52,7 @@ if (isset($coordenadas["lat"])){
 }else{
   $coordenadas["lat"] = -33.5;
   $coordenadas["long"] = -70.5;
-
+}
 
 
 echo "Las coordenadas de envio son: Lat: ".strval($coordenadas["lat"])." Long: ".strval($coordenadas["long"]);
@@ -62,7 +64,7 @@ echo "Las coordenadas de envio son: Lat: ".strval($coordenadas["lat"])." Long: "
 <?php
 
 
-
+if ($entrar_a == True) {
 // where are we posting to?
 $url = 'https://lit-plateau-15934.herokuapp.com/messages';
 
