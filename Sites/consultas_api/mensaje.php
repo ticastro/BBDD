@@ -25,14 +25,11 @@ if ($uid_destino_str == ""){
   echo "El usuario no es valido";
 }else{
 
-print_r($uid_destino);
 
   $fecha_hoy = getdate();
   $fecha_hoy_str = strval($fecha_hoy["year"])."-".strval($fecha_hoy["mon"])."-".strval($fecha_hoy["mday"]);
 
-echo "La fecha de hoy es: ".$fecha_hoy_str."<br />";
-echo "El sender es: ".strval($uid)."<br />";
-echo "El receptant es: ".$uid_destino_str."<br />";
+echo "Mensaje enviado correctamente";
 
 
 
