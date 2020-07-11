@@ -5,9 +5,8 @@
 <?php
   $uid = $_SESSION["uid"];
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  
-  $username = $_POST["username"];
-
+$username = $_POST["username"];
+$mensaje = $_POST["message"];
   require("../config/conexion.php");
   $query = "SELECT uid FROM usuarios WHERE username = '$username' ;";
 
@@ -55,11 +54,46 @@ if (isset($coordenadas["lat"])){
   $coordenadas["lat"] = -33.5;
   $coordenadas["long"] = -70.5;
 }
-}
+
 
 echo "Las coordenadas de envio son: Lat: ".strval($coordenadas["lat"])." Long: ".strval($coordenadas["long"]);
-
+}
       ?>
  
 
+
+<?php
+
+
+
+// where are we posting to?
+$url = 'https://lit-plateau-15934.herokuapp.com/messages';
+
+    // what post fields?
+    $fields = array(
+       'date' => $fecha_hoy_str,
+       'lat' => strval($coordenadas["lat"]),
+       'long' => strval($coordenadas["long"]),
+       'message' => $message,
+       'receptant' => $uid_destino_str,
+       'sender' => strval($uid),
+    );
+
+    // build the urlencoded data
+    $postvars = http_build_query($fields);
+
+    // open connection
+    $ch = curl_init();
+
+    // set the url, number of POST vars, POST data
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, count($fields));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+
+    // execute post
+    $result = curl_exec($ch);
+
+    // close connection
+    curl_close($ch)
+?>
 <?php include('../templates/footer.html'); ?>
