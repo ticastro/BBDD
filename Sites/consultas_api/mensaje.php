@@ -82,7 +82,7 @@ $url = 'https://lit-plateau-15934.herokuapp.com/messages';
   $data = json_encode($fields);
     // build the urlencoded data
     // open connection
-    $ch = curl_init();
+    $ch = curl_init($url);
 
 // Attach encoded JSON string to the POST fields
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
