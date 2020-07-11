@@ -94,7 +94,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $result = curl_exec($ch);
     // close connection
-    curl_close($ch)
+    curl_close($ch);
 }
 ?>
 <?php include('../templates/footer.html'); ?>
