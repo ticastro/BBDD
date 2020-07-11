@@ -79,19 +79,19 @@ $url = 'https://lit-plateau-15934.herokuapp.com/messages';
        'sender' => strval($uid),
     );
 
+  $data = json_encode($fields);
     // build the urlencoded data
-    $postvars = http_build_query($fields);
-
     // open connection
     $ch = curl_init();
 
-    // set the url, number of POST vars, POST data
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, count($fields));
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+// Attach encoded JSON string to the POST fields
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
-    // execute post
-    $result = curl_exec($ch);
+// Set the content type to application/json
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+
+// Return response instead of outputting
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     // close connection
     curl_close($ch)
