@@ -93,6 +93,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 // Return response instead of outputting
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
+$result = curl_exec($ch);
     // close connection
     curl_close($ch)
 ?>
