@@ -15,8 +15,7 @@ require("../config/conexion.php");
  $requerida = strval($requerida);
  $prohibida = strval($prohibida);
  $id_usuario = intval($id_usuario);
- var_dump($requerida=="");
- var_dump($id_usuario);
+
 
  #aqui se crea el data
  $data = array();
